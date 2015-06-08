@@ -1,0 +1,63 @@
+<!--
+Yanano Muruvi
+March 19, 2015
+Spike Bird
+I personally like using internet explorer when working with javascript because it's 
+//-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=3">
+        <meta charset="UTF-8">
+        <meta name="author" content="Nano Muruvi">
+        <meta name="description" content="Free simple HTML5 game.">
+        <meta name="keywords" content="HTML, HTML5, JavaScript, CSS, Game, 2d">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <title>Canon Ball</title>
+        <style type="text/css">
+            body{ margin: 0px; 
+                  padding: 0px;
+                  background:#FF7519;
+            }
+            #myCanvas{ background:#FFF; 
+                       border:#000 1px solid;
+                       padding-left: 0;
+                       padding-right: 0;
+                       margin-left: auto;
+                       margin-right: auto;
+                       display: block;
+                       width: auto;
+                       height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="myCanvas" width ="512" height="512"></canvas>
+        <div>
+            <script type='application/javascript' src ="https://dl.dropboxusercontent.com/u/90407969/SpikeBird/FinalSpikeBird/public_html/js/FastClick.js">
+            </script>
+            <script type="text/javascript">
+                function onBodyLoad() {
+                    document.addEventListener("deviceready", onDeviceReady, false);
+                }
+                function onDeviceReady() {
+                    //alert('test');
+                    FastClick.attach(document.body);
+                }
+                onBodyLoad();
+                onDeviceReady();
+            </script>
+            <script type='application/javascript' src ="https://dl.dropboxusercontent.com/u/90407969/Canonball-Game/public_html/js/Canonball.js">
+            </script>
+        </div>
+        <div>
+            <br>
+            <form action="http://goo.gl/jWkewH">
+                <input type="submit" value="Why is there a delay between mouse clicks and in game actions?">
+            </form>
+        </div>
+    </body>
+</html>
