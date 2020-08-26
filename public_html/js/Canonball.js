@@ -18,6 +18,9 @@ var colors = ["#F0F8FF", "#FAEBD7", "#7FFFD4", "#8A2BE2", "#A52A2A", "#7FFF00",
     "#FF00FF", "#FFD700", "#ADFF2F", "#FF69B4", "#F0E68C", "#778899", "#CD853F",
     "#E066E0", "#754719", "#33FFFF", "#8F6BB2", "#CC7A29", "#7519FF", "#FF4D4D"];
 var greyShades = ["#8A8A8A", "#636363", "#3C3C3C", "#303030", "#242424", "#181818", "#0C0C0C", "#151515", "#323232"];
+
+var spdMult = 0.5;/*Adding this because testing in 2020 revealed that everything moved way faster so just gonna slow things down.*/
+
 function getRnd(min, max) {
     var num = Math.random() * (max - min) + min;
     return Math.round(num);
@@ -358,11 +361,11 @@ function drawCirc() {
 function moveCirc() {
     for (var i = 0; i < rightCirc.length; i++) {
         if (rightCirc[i].show && player.direction === "r")
-            rightCirc[i].x -= player.horizontalSpeed * 1.35;
+            rightCirc[i].x -= player.horizontalSpeed * 1.35 * spdMult;
     }
     for (var i = 0; i < leftCirc.length; i++) {
         if (leftCirc[i].show && player.direction === "l")
-            leftCirc[i].x += player.horizontalSpeed * 1.35;
+            leftCirc[i].x += player.horizontalSpeed * 1.35 * spdMult;
     }
 }
 /*
@@ -604,9 +607,9 @@ function botCircleCollission() {
  */
 function moveLR() {
     if (player.direction === "r") {//right
-        player.x += player.horizontalSpeed;
+        player.x += player.horizontalSpeed * spdMult;
     } else if (player.direction === "l") {//left
-        player.x -= player.horizontalSpeed;
+        player.x -= player.horizontalSpeed * spdMult;
     }
     if (player.x + player.radius >= canvas.width - 16) {
         player.direction = "l";
